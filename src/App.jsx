@@ -1,17 +1,22 @@
-import { useState } from "react";
 import "./App.css";
-import { CartContext } from "./context/CartContext";
-import Header from "./components/Header";
-import Cart from "./components/Cart";
-import Clear from "./components/Clear";
+import { CartProvider } from "./context/CartContext";
+import Nav from "./components/Nav";
+import Products from "./components/Products";
 
 function App() {
   return (
-    <CartContext.Provider>
-      <Header />
-      <Cart />
-      <Clear />
-    </CartContext.Provider>
+    <CartProvider>
+      <header>
+        <div className="container">
+          <Nav />
+        </div>
+      </header>
+      <div className="container">
+        <div className="products">
+          <Products />
+        </div>
+      </div>
+    </CartProvider>
   );
 }
 
